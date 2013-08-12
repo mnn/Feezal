@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ant-contrib-0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batch.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/js.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsapi-1.0-base.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsapi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-4.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sphinx4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tags.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/TIDIGITS_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/WSJ_8gau_13dCep_8kHz_31mel_200Hz_3500Hz.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

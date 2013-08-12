@@ -1,0 +1,22 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for Hello World example
+ */
+
+grammar hello;
+
+public <greet> = (Good morning | Hello) ( Bhiksha | Evandro | Paul | Philip | Rita | Will );
+
+public <base> = Computer [Please] <command>;
+<command> = Shutdown | Quit | Greet | <commandC>;
+
+<commandC> = <command2> | <command3> | <command4> | <command5> | <command6>;
+
+<command2> = What Time Is It | Time;
+<command3> = What Day Is It | Day;
+<command5> = What weather is it | Weather;
+<command4> = Execute [Sub Routine] <id>+;
+<command6> = Initiate Self Destruct;
+
+<id> = Alpha | Beta | Gamma | Delta | Epsilon;
