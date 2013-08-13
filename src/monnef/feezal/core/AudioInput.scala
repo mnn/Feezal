@@ -7,8 +7,6 @@ import sys.error
 import edu.cmu.sphinx.result.Result
 import java.io.FileWriter
 import reflect.io.Path
-import edu.cmu.sphinx.jsgf.JSGFGrammar
-import java.net.URL
 
 object AudioInput {
 
@@ -28,7 +26,7 @@ object AudioInput {
     log.debug("Current dir is %s", new java.io.File(".").getCanonicalPath)
     val input = getClass.getResourceAsStream(s"/monnef/feezal/core/$GRAMMAR_TEMPLATE_FILE_NAME")
     var inputText = io.Source.fromInputStream(input).getLines().mkString("\n")
-    if (inputText.isEmpty) inputText = Path("").toFile.toString()
+    if (inputText.isEmpty) inputText = Path(s"$GRAMMAR_TEMPLATE_FILE_NAME").toFile.toString()
     Path(TMP_DIR).createDirectory(force = false, failIfExists = false)
     val output = new FileWriter(TMP_DIR + "/" + GRAMMAR_GENERATED_FILE_NAME)
     output.write(inputText)
@@ -42,11 +40,11 @@ object AudioInput {
     recognizer = cm.lookup("recognizer").asInstanceOf[Recognizer]
     recognizer.allocate()
 
-/*
-    val grammarManager = cm.lookup("jsgfGrammar").asInstanceOf[JSGFGrammar]
-    grammarManager.setBaseURL(new URL(s"file:./$TMP_DIR"))
-    grammarManager.loadJSGF(s"feezal")
-*/
+    /*
+        val grammarManager = cm.lookup("jsgfGrammar").asInstanceOf[JSGFGrammar]
+        grammarManager.setBaseURL(new URL(s"file:./$TMP_DIR"))
+        grammarManager.loadJSGF(s"feezal")
+    */
 
     info("Recognizer ready")
     microphone = cm.lookup("microphone").asInstanceOf[Microphone]

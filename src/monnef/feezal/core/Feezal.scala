@@ -2,7 +2,6 @@ package monnef.feezal.core
 
 
 object Feezal extends App with Logging {
-  val TIME_GRAMMAR_NAME = "time"
   val RESOURCE_PATH = "/monnef/feezal/core/"
   val COMPUTER_PREFIX = "computer"
   val CONFIG_FILE_NAME = "feezal.xml"
@@ -19,6 +18,7 @@ object Feezal extends App with Logging {
     AudioInput.init()
 
     info("You can input commands now.")
+    println("------------------------------------------------------")
     System.out.flush()
     var running = true
     while (running) {
