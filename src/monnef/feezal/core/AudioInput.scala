@@ -16,6 +16,7 @@ object AudioInput {
   val GRAMMAR_GENERATED_FILE_NAME = "feezal.gram"
   val MIC_ERROR_MSG = "cannot set-up microphone"
   val TMP_DIR = "tmp"
+  val CONFIG_FILE_NAME = "feezal.xml"
 
   private var cm: ConfigurationManager = null
   private var recognizer: Recognizer = null
@@ -34,25 +35,30 @@ object AudioInput {
   }
 
   def init() {
+    info("Merging grammars...")
     prepareGrammar()
     info("Grammar generated")
+    info("Initializing recognizer...")
     cm = new ConfigurationManager(CONFIG_FILE_NAME)
     recognizer = cm.lookup("recognizer").asInstanceOf[Recognizer]
     recognizer.allocate()
-
-    /*
-        val grammarManager = cm.lookup("jsgfGrammar").asInstanceOf[JSGFGrammar]
-        grammarManager.setBaseURL(new URL(s"file:./$TMP_DIR"))
-        grammarManager.loadJSGF(s"feezal")
-    */
-
+    forceReInitLoggers() // recognizer's allocate messes up loggers, have no idea why...
     info("Recognizer ready")
+    info("Initializing mic...")
     microphone = cm.lookup("microphone").asInstanceOf[Microphone]
     if (!microphone.startRecording()) {
       log.critical(MIC_ERROR_MSG)
       error(MIC_ERROR_MSG)
     }
     info("Microphone ready")
+  }
+
+  def destroy() {
+    info("Unloading mic...")
+    microphone.stopRecording()
+    info("Unloading recognizer...")
+    recognizer.deallocate()
+    info("Audio input part unloaded")
   }
 
   def recognize(): (String, Result) = {

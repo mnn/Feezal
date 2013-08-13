@@ -6,13 +6,10 @@
 
 grammar feezal;
 
-// public <greet> = (Good morning | Hello) ( Bhiksha | Evandro | Paul | Philip | Rita | Will );
+public <base> = [Computer] [Please] <commandC>;
 
-public <base> = Computer <command>;
-public <command> = [Please] <commandC>;
-
+<builtIn> = Shutdown | Quit | Greet;
 <commandC> = <builtIn> | <command2> | <command3> | <command4> | <command5> | <command6>;
-<builtIn> = Shutdown | Quit | Greet
 
 <command2> = What Time Is It | Time;
 <command3> = What Day Is It | Day;

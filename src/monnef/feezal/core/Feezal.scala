@@ -1,24 +1,30 @@
 package monnef.feezal.core
 
+import sys.error
 
 object Feezal extends App with Logging {
   val RESOURCE_PATH = "/monnef/feezal/core/"
   val COMPUTER_PREFIX = "computer"
-  val CONFIG_FILE_NAME = "feezal.xml"
   val GRAMMAR_TEMPLATE_FILE_NAME = "feezal_template.gram"
+  val FORCE_INFO_TO_STD_OUT = false
+  val LOG_DELIM = "-" * 20
 
   myMain()
 
-  def info(msg: String) { log.info(msg) }
+  def info(msg: String) {
+    if (FORCE_INFO_TO_STD_OUT) println(s"STDOUT: $msg")
+    if (msg == null) error("oh man, got null in log message");
+    log.info(msg)
+  }
 
   def myMain() {
-    info("Starting...")
+    info(LOG_DELIM)
+    info("Feezal is starting...")
     ModuleManager.init()
     info("Modules loaded")
     AudioInput.init()
 
     info("You can input commands now.")
-    println("------------------------------------------------------")
     System.out.flush()
     var running = true
     while (running) {
@@ -28,7 +34,7 @@ object Feezal extends App with Logging {
         (
           if (lastTextResult.isEmpty) "I can't hear what you said."
           else s"You said: $lastTextResult"
-          ) + "\n"
+          )
       )
 
       if (lastTextResult.startsWith(COMPUTER_PREFIX)) {
@@ -41,6 +47,8 @@ object Feezal extends App with Logging {
       }
       System.out.flush()
     }
+    info("Terminating.")
+    AudioInput.destroy()
   }
 
   def loggerName = "Feezal"
