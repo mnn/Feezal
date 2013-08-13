@@ -2,3 +2,5 @@
 /out
 /lib/jsapi.jar
 /tmp
+/feezal.log
+/modules/*/*.jar

@@ -225,7 +225,7 @@
 
     <component name="microphone"
                type="edu.cmu.sphinx.frontend.util.Microphone">
-        <property name="closeBetweenUtterances" value="true"/>
+        <property name="closeBetweenUtterances" value="false"/>
     </component>
 
 
