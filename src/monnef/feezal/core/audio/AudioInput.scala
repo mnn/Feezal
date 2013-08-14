@@ -19,6 +19,7 @@ object AudioInput {
   val MIC_ERROR_MSG = "cannot set-up microphone"
   val TMP_DIR = "tmp"
   val CONFIG_FILE_NAME = "feezal.xml"
+  val COMMAND_PLACEHOLDER: String = "%command%"
 
   private var cm: ConfigurationManager = null
   private var recognizer: Recognizer = null
@@ -31,7 +32,9 @@ object AudioInput {
     if (templateGrammar.isEmpty) templateGrammar = Path(s"$GRAMMAR_TEMPLATE_FILE_NAME").toFile.toString()
     if (templateGrammar.isEmpty) error("Cannot load template for grammar.")
 
-    val generatedTail = (for {(moduleRec, id) <- ModuleManager.modules.zipWithIndex} yield moduleRec.module.getPartialGrammar.replace("%command%", "command" + id)).mkString("\n")
+    val generatedTail = (for {(moduleRec, id) <- ModuleManager.modules.zipWithIndex} yield {
+      moduleRec.module.getPartialGrammar.replace(COMMAND_PLACEHOLDER, "command" + id)
+    }).mkString("\n")
     val commandTerm = (for (id <- Range(0, ModuleManager.modules.length)) yield s"<command$id>").mkString("<commandM> = ", " | ", " ;")
     val finalGrammar = List(templateGrammar, commandTerm, generatedTail) mkString "\n"
 

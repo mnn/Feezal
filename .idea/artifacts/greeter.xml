@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="greeter">
     <output-path>$PROJECT_DIR$/modules/greeter</output-path>
     <root id="archive" name="greeter.jar">
-      <element id="module-output" name="greeter" />
+      <element id="module-output" name="greeter_module" />
     </root>
   </artifact>
 </component>

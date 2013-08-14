@@ -5,6 +5,8 @@ import monnef.feezal.core.audio.{AudioOutputImpl, AudioInput}
 
 
 object Feezal extends App with Logging {
+  val version = "0.1"
+
   val RESOURCE_PATH = "/monnef/feezal/core/"
   val COMPUTER_PREFIX = "computer"
   val GRAMMAR_TEMPLATE_FILE_NAME = "feezal_template.gram"

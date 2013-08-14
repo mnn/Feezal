@@ -10,8 +10,7 @@ object AudioOutputImpl extends AudioOutput {
   val VOICE_NAME = "kevin16"
 
   def isSpeaking: Boolean = {
-    // TODO
-    false
+    synth.testEngineState(Synthesizer.QUEUE_NOT_EMPTY)
   }
 
   private var desc: SynthesizerModeDesc = _
@@ -69,7 +68,7 @@ object AudioOutputImpl extends AudioOutput {
   }
 
   def addToSpeakQueue(text: String) {
-    // TODO ?
     speakInternal(text)
+    info( s"""Saying: "$text".""")
   }
 }
