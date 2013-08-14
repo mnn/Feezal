@@ -1,7 +1,7 @@
 package monnef.feezal.module.greeter
 
-import monnef.feezal.core.{Feezal, FeezalModule}
 import monnef.feezal.core.Utils._
+import monnef.feezal.core.module.FeezalModule
 
 class GreeterModule extends FeezalModule {
   val inputGreetings = List("greet", "hello", "good morning")
@@ -15,7 +15,7 @@ class GreeterModule extends FeezalModule {
 
   def processAudioInput(capturedText: String, rawText: String): Boolean = {
     if (inputGreetings.contains(capturedText)) {
-      Feezal.output.addToSpeakQueue(outputGreetings.pickRandom)
+      output.addToSpeakQueue(outputGreetings.pickRandom)
       true
     } else false
   }

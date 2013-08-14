@@ -1,23 +1,10 @@
-package monnef.feezal.core
+package monnef.feezal.core.audio
 
 import javax.speech.synthesis.{Synthesizer, SynthesizerModeDesc}
 import java.util.Locale
 import sys.error
 import javax.speech.Central
-
-trait AudioOutput {
-  def isSpeaking: Boolean
-
-  def init()
-
-  def destroy()
-
-  def addToSpeakQueue(text: String)
-
-  def waitUntilSilent() {
-    while (isSpeaking) Utils.sleep(100)
-  }
-}
+import monnef.feezal.core.Feezal._
 
 object AudioOutputImpl extends AudioOutput {
   val VOICE_NAME = "kevin16"
@@ -69,9 +56,11 @@ object AudioOutputImpl extends AudioOutput {
   }
 
   def destroy() {
+    info("Unloading synthesiser...")
     synth.cancelAll()
     synth.pause()
     synth.deallocate()
+    info("Audio output part unloaded")
   }
 
   def speakInternal(text: String) {
@@ -80,7 +69,7 @@ object AudioOutputImpl extends AudioOutput {
   }
 
   def addToSpeakQueue(text: String) {
-    // TODO
+    // TODO ?
     speakInternal(text)
   }
 }

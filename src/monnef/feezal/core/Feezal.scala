@@ -1,5 +1,8 @@
 package monnef.feezal.core
 
+import monnef.feezal.core.module.ModuleManager
+import monnef.feezal.core.audio.{AudioOutputImpl, AudioInput}
+
 
 object Feezal extends App with Logging {
   val RESOURCE_PATH = "/monnef/feezal/core/"
@@ -27,16 +30,23 @@ object Feezal extends App with Logging {
     info(LOG_DELIM)
     info("Feezal is starting...")
 
-    ModuleManager.init()
-    info("Modules loaded")
+    info("Processing modules...")
+    ModuleManager.load()
+    info("Modules loaded and instantiated")
 
+    info("Setting-up audio input...")
     input.init()
     info("Audio input ready")
 
+    info("Setting-up audio output...")
     output.init()
     info("Audio output ready")
 
-    info("You can input commands now.")
+    info("Initializing modules...")
+    val modsInitCount = ModuleManager.init(output)
+    info(s"Initialized $modsInitCount module(s).")
+
+    info("System ready for commands.")
     System.out.flush()
     var running = true
     while (running) {
@@ -59,8 +69,10 @@ object Feezal extends App with Logging {
       System.out.flush()
     }
     info("Terminating.")
+    ModuleManager.destroy()
     input.destroy()
     output.destroy()
+    info("Good bye, my beloved.")
   }
 
   def loggerName = "Feezal"

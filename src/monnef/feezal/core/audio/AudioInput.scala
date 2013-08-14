@@ -1,4 +1,4 @@
-package monnef.feezal.core
+package monnef.feezal.core.audio
 
 import edu.cmu.sphinx.util.props.ConfigurationManager
 import edu.cmu.sphinx.recognizer.Recognizer
@@ -7,6 +7,8 @@ import sys.error
 import edu.cmu.sphinx.result.Result
 import java.io.FileWriter
 import reflect.io.Path
+import monnef.feezal.core.Feezal
+import monnef.feezal.core.Feezal._
 
 object AudioInput {
 

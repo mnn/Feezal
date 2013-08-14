@@ -21,4 +21,13 @@ object Utils {
     def pickRandom: A = list(rand.nextInt(list.length))
   }
 
+  def falseIfEmpty(test: String, elseBranch: => Boolean): Boolean = if (test == null || test.trim.isEmpty) false else elseBranch
+
+  implicit def pimpBool(b: => Boolean) = new {
+    def ?-:(s: String): Boolean = falseIfEmpty(s, b)
+  }
+
+  implicit def pimpString(r: => String) = new {
+    def ?-:(l: String): Boolean = l ?-: r ?-: true
+  }
 }
