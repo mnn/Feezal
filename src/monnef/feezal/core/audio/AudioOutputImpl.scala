@@ -67,8 +67,13 @@ object AudioOutputImpl extends AudioOutput {
     synth.waitEngineState(Synthesizer.QUEUE_EMPTY)
   }
 
+  private var lastMessage = ""
+
   def addToSpeakQueue(text: String) {
-    speakInternal(text)
     info( s"""Saying: "$text".""")
+    lastMessage = text
+    speakInternal(text)
   }
+
+  def getLastMessage = lastMessage
 }

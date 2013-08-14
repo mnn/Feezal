@@ -2,6 +2,8 @@ package monnef.feezal.core
 
 import scala.util.Random
 import java.io.FileWriter
+import java.text.SimpleDateFormat
+import java.util.Date
 
 object Utils {
   def sleep(ms: Int) {
@@ -37,4 +39,9 @@ object Utils {
     output.write(content)
     output.close()
   }
+
+  implicit class pimpSimpleDateFormat(val f: SimpleDateFormat) {
+    def formatNow: String = f.format(new Date())
+  }
+
 }

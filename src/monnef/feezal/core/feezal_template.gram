@@ -2,7 +2,7 @@
 
 grammar feezal;
 
-public <base> = [Computer] [Please] <commandC>;
+public <base> = Computer [Please] <commandC>;
 
 <builtIn> = <NULL>;
 <commandC> = <builtIn> | <commandM>;

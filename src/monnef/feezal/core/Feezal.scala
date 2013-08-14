@@ -50,16 +50,19 @@ object Feezal extends App with Logging {
     def tossPrefixes(text: String): String = { text.split(" ").dropWhile(PREFIXES.contains(_)).mkString(" ") }
     running = true
     while (running) {
-      val (rawTextResult, _) = input.recognize()
-      val skip = rawTextResult.isEmpty
+      val (rawTextResult, resultObj) = input.recognize()
       val filteredTextResult = tossPrefixes(rawTextResult)
+      val skip = filteredTextResult.isEmpty
       info(if (skip) "I can't hear what you said." else s"You said: $rawTextResult (filtered: $filteredTextResult)")
-      val processedBy = for {
-        moduleRec <- ModuleManager.modules
-        if moduleRec.module.processAudioInput(filteredTextResult, rawTextResult)
-      } yield moduleRec.title
-      if (processedBy.length > 1) log.warning(s"Message processed by multiple modules - ${processedBy mkString ", "}")
-      if (processedBy.length <= 0) log.info(s"Command not recognized.")
+      if (!skip) {
+        input.printScores(resultObj)
+        val processedBy = for {
+          moduleRec <- ModuleManager.modules
+          if moduleRec.module.processAudioInput(filteredTextResult, rawTextResult)
+        } yield moduleRec.title
+        if (processedBy.length > 1) log.warning(s"Message processed by multiple modules - ${processedBy mkString ", "}")
+        if (processedBy.length <= 0) log.info(s"Command not recognized.")
+      }
       System.out.flush()
     }
   }

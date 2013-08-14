@@ -14,6 +14,8 @@ trait AudioOutput {
   def waitUntilSilent() {
     while (isSpeaking) Utils.sleep(100)
   }
+
+  def getLastMessage: String
 }
 
 

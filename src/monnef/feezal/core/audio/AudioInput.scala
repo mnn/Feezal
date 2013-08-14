@@ -4,7 +4,7 @@ import edu.cmu.sphinx.util.props.ConfigurationManager
 import edu.cmu.sphinx.recognizer.Recognizer
 import edu.cmu.sphinx.frontend.util.Microphone
 import sys.error
-import edu.cmu.sphinx.result.Result
+import edu.cmu.sphinx.result.{ConfidenceScorer, Result}
 import reflect.io.Path
 import monnef.feezal.core.{Utils, Feezal}
 import monnef.feezal.core.module.ModuleManager
@@ -24,6 +24,7 @@ object AudioInput {
   private var cm: ConfigurationManager = null
   private var recognizer: Recognizer = null
   private var microphone: Microphone = null
+  private var score: ConfidenceScorer = null
 
   def prepareGrammar() {
     log.debug("Current dir is %s", new java.io.File(".").getCanonicalPath)
@@ -51,6 +52,7 @@ object AudioInput {
     recognizer = cm.lookup("recognizer").asInstanceOf[Recognizer]
     recognizer.allocate()
     forceReInitLoggers() // recognizer's allocate messes up loggers, have no idea why...
+    score = cm.lookup("confidenceScorer").asInstanceOf[ConfidenceScorer]
     info("Recognizer ready")
     info("Initializing mic...")
     microphone = cm.lookup("microphone").asInstanceOf[Microphone]
@@ -72,5 +74,14 @@ object AudioInput {
   def recognize(): (String, Result) = {
     val result = recognizer.recognize()
     (result.getBestFinalResultNoFiller, result)
+  }
+
+  def printScores(resultObj: Result) {
+    if (score == null) return;
+    val confRes = score.score(resultObj)
+    val best = confRes.getBestHypothesis
+    log.trace( s"""best transcript: ${best.getTranscriptionNoFiller}" """)
+    val confidence = best.getLogMath.logToLinear(best.getConfidence.asInstanceOf[Float])
+    log.debug( s"""total conf.: ${"%.2f".format(confidence)} """)
   }
 }

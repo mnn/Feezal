@@ -9,7 +9,9 @@ class CoreModule extends FeezalModule {
     ("terminate voice interface", () => Feezal.running = false),
     ("who are you", () => output.addToSpeakQueue(s"I am Feezal ${Feezal.version}.")),
     ("what is your name", () => output.addToSpeakQueue(s"My name is Feezal ${Feezal.version}.")),
-    ("what are you", () => output.addToSpeakQueue(s"I am computer voice interface."))
+    ("what are you", () => output.addToSpeakQueue(s"I am computer voice interface.")),
+    ("repeat", () => output.addToSpeakQueue(output.getLastMessage)),
+    ("repeat last message", () => output.addToSpeakQueue(output.getLastMessage))
   )
 
   def getPartialGrammar: String = {
