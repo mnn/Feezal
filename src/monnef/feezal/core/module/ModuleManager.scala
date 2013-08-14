@@ -49,7 +49,7 @@ object ModuleManager {
         log.warning( s"""Problem with loading of module in directory "${dir.getName}": "${e.getMessage}" """)
         if (e.getCause != null) {
           log.debug( s"""Cause: ${e.getCause}""")
-          log.debug((for (line <- e.getStackTraceString.lines) yield "   " + line).mkString("\n"))
+          log.debug((for (line <- e.getStackTraceString.lines) yield "   " + line) mkString "\n")
         }
       }
     }

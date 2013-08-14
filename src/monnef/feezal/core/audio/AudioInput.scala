@@ -5,10 +5,10 @@ import edu.cmu.sphinx.recognizer.Recognizer
 import edu.cmu.sphinx.frontend.util.Microphone
 import sys.error
 import edu.cmu.sphinx.result.Result
-import java.io.FileWriter
 import reflect.io.Path
-import monnef.feezal.core.Feezal
-import monnef.feezal.core.Feezal._
+import monnef.feezal.core.{Utils, Feezal}
+import monnef.feezal.core.module.ModuleManager
+import scala.collection.immutable.Range
 
 object AudioInput {
 
@@ -25,15 +25,18 @@ object AudioInput {
   private var microphone: Microphone = null
 
   def prepareGrammar() {
-    // TODO
     log.debug("Current dir is %s", new java.io.File(".").getCanonicalPath)
     val input = getClass.getResourceAsStream(s"/monnef/feezal/core/$GRAMMAR_TEMPLATE_FILE_NAME")
-    var inputText = io.Source.fromInputStream(input).getLines().mkString("\n")
-    if (inputText.isEmpty) inputText = Path(s"$GRAMMAR_TEMPLATE_FILE_NAME").toFile.toString()
+    var templateGrammar = io.Source.fromInputStream(input).getLines().mkString("\n")
+    if (templateGrammar.isEmpty) templateGrammar = Path(s"$GRAMMAR_TEMPLATE_FILE_NAME").toFile.toString()
+    if (templateGrammar.isEmpty) error("Cannot load template for grammar.")
+
+    val generatedTail = (for {(moduleRec, id) <- ModuleManager.modules.zipWithIndex} yield moduleRec.module.getPartialGrammar.replace("%command%", "command" + id)).mkString("\n")
+    val commandTerm = (for (id <- Range(0, ModuleManager.modules.length)) yield s"<command$id>").mkString("<commandM> = ", " | ", " ;")
+    val finalGrammar = List(templateGrammar, commandTerm, generatedTail) mkString "\n"
+
     Path(TMP_DIR).createDirectory(force = false, failIfExists = false)
-    val output = new FileWriter(TMP_DIR + "/" + GRAMMAR_GENERATED_FILE_NAME)
-    output.write(inputText)
-    output.close()
+    Utils.writeTextToFile(TMP_DIR + "/" + GRAMMAR_GENERATED_FILE_NAME, finalGrammar)
   }
 
   def init() {

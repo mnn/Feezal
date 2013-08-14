@@ -1,6 +1,7 @@
 package monnef.feezal.core
 
 import scala.util.Random
+import java.io.FileWriter
 
 object Utils {
   def sleep(ms: Int) {
@@ -17,7 +18,7 @@ object Utils {
 
   val rand = new Random()
 
-  implicit class ListMethods[A](val list: List[A]) {
+  implicit class pimpList[A](val list: List[A]) {
     def pickRandom: A = list(rand.nextInt(list.length))
   }
 
@@ -29,5 +30,11 @@ object Utils {
 
   implicit def pimpString(r: => String) = new {
     def ?-:(l: String): Boolean = l ?-: r ?-: true
+  }
+
+  def writeTextToFile(fileName: String, content: String) {
+    val output = new FileWriter(fileName)
+    output.write(content)
+    output.close()
   }
 }

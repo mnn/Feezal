@@ -9,7 +9,10 @@ grammar feezal;
 public <base> = [Computer] [Please] <commandC>;
 
 <builtIn> = Shutdown | Quit | Greet;
-<commandC> = <builtIn> | <command2> | <command3> | <command4> | <command5> | <command6>;
+<commandC> = <builtIn> | <commandM>;
+
+/*
+<commandM> = <command2> | <command3> | <command4> | <command5> | <command6>;
 
 <command2> = What Time Is It | Time;
 <command3> = What Day Is It | Day;
@@ -18,3 +21,4 @@ public <base> = [Computer] [Please] <commandC>;
 <command6> = Initiate Self Destruct;
 
 <id> = Alpha | Beta | Gamma | Delta | Epsilon;
+*/

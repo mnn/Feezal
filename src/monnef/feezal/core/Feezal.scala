@@ -10,9 +10,12 @@ object Feezal extends App with Logging {
   val GRAMMAR_TEMPLATE_FILE_NAME = "feezal_template.gram"
   val FORCE_INFO_TO_STD_OUT = false
   val LOG_DELIM = "-" * 20
+  val PREFIXES = List("computer", "please")
 
   val input = AudioInput
   val output = AudioOutputImpl
+
+  var running: Boolean = _
 
   myMain()
 
@@ -27,6 +30,39 @@ object Feezal extends App with Logging {
   }
 
   def myMain() {
+    init()
+    run()
+    terminate()
+  }
+
+
+  def terminate() {
+    info("Terminating.")
+    ModuleManager.destroy()
+    input.destroy()
+    output.destroy()
+    info("Good bye, my beloved.")
+  }
+
+  def run() {
+    def tossPrefixes(text: String): String = { text.split(" ").dropWhile(PREFIXES.contains(_)).mkString(" ") }
+    running = true
+    while (running) {
+      val (rawTextResult, _) = input.recognize()
+      val skip = rawTextResult.isEmpty
+      val filteredTextResult = tossPrefixes(rawTextResult)
+      info(if (skip) "I can't hear what you said." else s"You said: $rawTextResult (filtered: $filteredTextResult)")
+      val processedBy = for {
+        moduleRec <- ModuleManager.modules
+        if moduleRec.module.processAudioInput(filteredTextResult, rawTextResult)
+      } yield moduleRec.title
+      if (processedBy.length > 1) log.warning(s"Message processed by multiple modules - ${processedBy mkString ", "}")
+      if (processedBy.length <= 0) log.info(s"Command not recognized.")
+      System.out.flush()
+    }
+  }
+
+  def init() {
     info(LOG_DELIM)
     info("Feezal is starting...")
 
@@ -48,31 +84,6 @@ object Feezal extends App with Logging {
 
     info("System ready for commands.")
     System.out.flush()
-    var running = true
-    while (running) {
-      var (lastTextResult, _) = input.recognize()
-
-      info(
-        if (lastTextResult.isEmpty) "I can't hear what you said."
-        else s"You said: $lastTextResult"
-      )
-
-      if (lastTextResult.startsWith(COMPUTER_PREFIX)) {
-        lastTextResult = lastTextResult.substring(COMPUTER_PREFIX.length + 1)
-      }
-
-      lastTextResult match {
-        case "initiate self destruct" => running = false
-        case "greet" => output.addToSpeakQueue("Hello")
-        case _ =>
-      }
-      System.out.flush()
-    }
-    info("Terminating.")
-    ModuleManager.destroy()
-    input.destroy()
-    output.destroy()
-    info("Good bye, my beloved.")
   }
 
   def loggerName = "Feezal"
