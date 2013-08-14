@@ -40,6 +40,7 @@ object AudioInput {
     val finalGrammar = List(templateGrammar, commandTerm, generatedTail) mkString "\n"
 
     Path(TMP_DIR).createDirectory(force = false, failIfExists = false)
+    log.trace(List("]] Generated grammar:", finalGrammar, "]] End of generated grammar").mkString("\n"))
     Utils.writeTextToFile(TMP_DIR + "/" + GRAMMAR_GENERATED_FILE_NAME, finalGrammar)
   }
 

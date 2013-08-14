@@ -44,4 +44,5 @@ object Utils {
     def formatNow: String = f.format(new Date())
   }
 
+  def funcOnFirstOrFalse[A](in: Iterable[A], f: (A) => Unit): Boolean = if (!in.isEmpty) {f(in.head); true} else {false}
 }
