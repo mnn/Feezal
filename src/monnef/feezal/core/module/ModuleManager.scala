@@ -4,7 +4,7 @@ import java.io.{IOException, FileInputStream, InputStreamReader, File}
 import sys.error
 import collection.mutable.ArrayBuffer
 import java.util.Properties
-import monnef.feezal.core.Utils._
+import monnef.feezal.utils._
 import monnef.feezal.core.Feezal
 import scala.tools.nsc.util.ScalaClassLoader.URLClassLoader
 import monnef.feezal.core.audio.AudioOutput

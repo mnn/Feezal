@@ -1,11 +1,11 @@
-package monnef.feezal.core
+package monnef.feezal
 
 import scala.util.Random
 import java.io.FileWriter
 import java.text.SimpleDateFormat
 import java.util.Date
 
-object Utils {
+package object utils {
   def sleep(ms: Int) {
     Thread.sleep(ms)
   }

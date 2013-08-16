@@ -2,7 +2,7 @@ package monnef.feezal.core
 
 import monnef.feezal.core.module.ModuleManager
 import monnef.feezal.core.audio.{AudioOutputImpl, AudioInput}
-
+import monnef.feezal.utils._
 
 object Feezal extends App with Logging {
   val version = "0.1"
@@ -24,7 +24,7 @@ object Feezal extends App with Logging {
   def info(msg: String) {
     val toPrint =
       if (msg == null)
-        s"Null in log message from ${Utils.getCaller}"
+        s"Null in log message from $getCaller"
       else
         msg
     if (FORCE_INFO_TO_STD_OUT) println(s"STDOUT: $toPrint")

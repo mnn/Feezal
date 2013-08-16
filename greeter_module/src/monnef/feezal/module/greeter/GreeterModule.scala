@@ -1,6 +1,6 @@
 package monnef.feezal.module.greeter
 
-import monnef.feezal.core.Utils._
+import monnef.feezal.utils._
 import monnef.feezal.core.module.FeezalModule
 import monnef.feezal.core.audio.AudioInput
 

@@ -6,9 +6,10 @@ import edu.cmu.sphinx.frontend.util.Microphone
 import sys.error
 import edu.cmu.sphinx.result.{ConfidenceScorer, Result}
 import reflect.io.Path
-import monnef.feezal.core.{Utils, Feezal}
+import monnef.feezal.core.Feezal
 import monnef.feezal.core.module.ModuleManager
 import scala.collection.immutable.Range
+import monnef.feezal.utils._
 
 object AudioInput {
 
@@ -41,7 +42,7 @@ object AudioInput {
 
     Path(TMP_DIR).createDirectory(force = false, failIfExists = false)
     log.trace(List("]] Generated grammar:", finalGrammar, "]] End of generated grammar").mkString("\n"))
-    Utils.writeTextToFile(TMP_DIR + "/" + GRAMMAR_GENERATED_FILE_NAME, finalGrammar)
+    writeTextToFile(TMP_DIR + "/" + GRAMMAR_GENERATED_FILE_NAME, finalGrammar)
   }
 
   def init() {

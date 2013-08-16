@@ -18,25 +18,25 @@
     <file path="/feezal.gram" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376334894233" ignored="false" />
     <file path="/time.gram" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376313378691" ignored="false" />
     <file path="/a.dummy" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376394743295" ignored="false" />
-    <file path="/AudioInput.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376512964149" ignored="false" />
+    <file path="/AudioInput.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376649631138" ignored="false" />
     <file path="/ZeroLoggerFactory.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376325246822" ignored="false" />
     <file path="/Logging.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376389942847" ignored="false" />
-    <file path="/ModuleManager.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376477455957" ignored="false" />
+    <file path="/ModuleManager.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376648833272" ignored="false" />
     <file path="/feezal_template.gram" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376492836303" ignored="false" />
     <file path="/FeezalModule.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376474246642" ignored="false" />
     <file path="$PROJECT_DIR$/../sevenQuotesTest/src/main.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376404585116" ignored="false" />
     <file path="/main.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376404856536" ignored="false" />
     <file path="$PROJECT_DIR$/../sevenQuotesTest/src/Main.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376404973919" ignored="false" />
-    <file path="/Utils.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376499583568" ignored="false" />
+    <file path="/Utils.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376648759832" ignored="false" />
     <file path="/AudioOutput.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376501360692" ignored="false" />
     <file path="/audioOutput.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376423663843" ignored="false" />
-    <file path="/GreeterModule.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376494968867" ignored="false" />
+    <file path="/GreeterModule.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376651882299" ignored="false" />
     <file path="/ModuleLoadingException.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376473955111" ignored="false" />
     <file path="/AudioOutputImpl.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376501339655" ignored="false" />
     <file path="/a.java" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376478922492" ignored="false" />
     <file path="/a.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376479396100" ignored="false" />
     <file path="/CoreModule.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376501404087" ignored="false" />
-    <file path="/TimeModule.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376512866822" ignored="false" />
+    <file path="/TimeModule.scala" changelist="2d215034-f545-42d1-ad41-75ef714404e3" time="1376652295094" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -88,6 +87,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -100,8 +100,10 @@
       <file leaf-file-name="Feezal.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/Feezal.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="48" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="18" column="50" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#28#74#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,16 +111,7 @@
       <file leaf-file-name="AudioInput.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioInput.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1852" selection-end="1852" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feezal_template.gram" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/feezal_template.gram">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="22" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
+            <state line="11" column="23" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,7 +120,7 @@
       <file leaf-file-name="AudioOutput.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioOutput.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="27" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0">
+            <state line="16" column="23" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,7 +129,7 @@
       <file leaf-file-name="TimeModule.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/time_module/src/monnef/feezal/module/time/TimeModule.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.39605734">
+            <state line="27" column="41" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.82258064">
               <folding>
                 <element signature="e#35#80#0" expanded="true" />
               </folding>
@@ -147,10 +140,8 @@
       <file leaf-file-name="CoreModule.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core_module/src/monnef/feezal/module/core/CoreModule.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="24" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#35#80#0" expanded="true" />
-              </folding>
+            <state line="15" column="0" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,7 +149,7 @@
       <file leaf-file-name="GreeterModule.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/greeter_module/src/monnef/feezal/module/greeter/GreeterModule.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="38" selection-end="160" vertical-scroll-proportion="0.0">
+            <state line="2" column="28" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,17 +159,15 @@
         <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioOutputImpl.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state line="77" column="20" selection-start="2222" selection-end="2236" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#34#98#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/Utils.scala">
+      <file leaf-file-name="utils.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/monnef/feezal/utils/utils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.0">
+            <state line="46" column="6" selection-start="1194" selection-end="1194" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -187,7 +176,7 @@
       <file leaf-file-name="ModuleManager.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/module/ModuleManager.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="0" selection-start="3488" selection-end="3488" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="189" selection-end="218" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -203,22 +192,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/monnef/feezal/core/ModuleManager.scala" />
         <option value="$PROJECT_DIR$/src/monnef/feezal/core/ModuleLoadingException.scala" />
         <option value="$PROJECT_DIR$/src/monnef/feezal/core/module/ModuleLoadingException.scala" />
         <option value="$PROJECT_DIR$/src/monnef/feezal/core/audio/audioOutput.scala" />
         <option value="$PROJECT_DIR$/src/monnef/feezal/core/module/FeezalModule.scala" />
-        <option value="$PROJECT_DIR$/src/monnef/feezal/core/module/ModuleManager.scala" />
         <option value="$PROJECT_DIR$/greeter/src/monnef/feezal/module/greeter/GreeterModule.scala" />
-        <option value="$PROJECT_DIR$/greeter_module/src/monnef/feezal/module/greeter/GreeterModule.scala" />
-        <option value="$PROJECT_DIR$/src/monnef/feezal/core/Feezal.scala" />
         <option value="$PROJECT_DIR$/src/monnef/feezal/core/feezal_template.gram" />
         <option value="$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioOutputImpl.scala" />
-        <option value="$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioOutput.scala" />
         <option value="$PROJECT_DIR$/core_module/src/monnef/feezal/module/core/CoreModule.scala" />
         <option value="$PROJECT_DIR$/src/monnef/feezal/core/Utils.scala" />
-        <option value="$PROJECT_DIR$/time_module/src/monnef/feezal/module/time/TimeModule.scala" />
+        <option value="$PROJECT_DIR$/src/monnef/feezal/utils/Utils.scala" />
+        <option value="$PROJECT_DIR$/src/monnef/feezal/core/module/ModuleManager.scala" />
+        <option value="$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioOutput.scala" />
+        <option value="$PROJECT_DIR$/src/monnef/feezal/core/Feezal.scala" />
         <option value="$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioInput.scala" />
+        <option value="$PROJECT_DIR$/greeter_module/src/monnef/feezal/module/greeter/GreeterModule.scala" />
+        <option value="$PROJECT_DIR$/time_module/src/monnef/feezal/module/time/TimeModule.scala" />
       </list>
     </option>
   </component>
@@ -239,7 +228,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -324,6 +313,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="feezal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feezal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feezal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feezal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -339,6 +358,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feezal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -434,7 +457,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.sourceCode.Scala" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/WSJ_8gau_13dCep_8kHz_31mel_200Hz_3500Hz.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -583,12 +606,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="1044" extended-state="7" />
+    <frame x="-4" y="-4" width="1928" height="1044" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3482143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -607,7 +631,6 @@
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Kahlua" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -678,13 +701,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/module/ModuleManager.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="0" selection-start="3488" selection-end="3488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/feezal.gram">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -699,35 +715,27 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/scala-library-2.10.0-M3.jar!/scala/Predef.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="45" selection-start="402" selection-end="402" vertical-scroll-proportion="0.25515947">
-          <folding />
-        </state>
+        <state line="8" column="45" selection-start="402" selection-end="402" vertical-scroll-proportion="0.25515947" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/module/ModuleLoadingException.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/module/ModuleManager.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="0" selection-start="3488" selection-end="3488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="7" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/feezal_template.gram">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="22" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="5" column="22" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/module/FeezalModule.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="37" selection-start="8" selection-end="33" vertical-scroll-proportion="0.0">
+        <state line="0" column="37" selection-start="8" selection-end="33" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/module/ModuleManager.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="189" selection-end="218" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -735,59 +743,64 @@
     <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioOutputImpl.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="20" selection-start="2222" selection-end="2236" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#34#98#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioOutput.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="27" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/Feezal.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="48" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/greeter_module/src/monnef/feezal/module/greeter/GreeterModule.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="38" selection-end="160" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core_module/src/monnef/feezal/module/core/CoreModule.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#35#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/Utils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioInput.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1852" selection-end="1852" vertical-scroll-proportion="0.0">
+        <state line="11" column="23" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/Feezal.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="50" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#28#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/core/audio/AudioOutput.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="23" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/monnef/feezal/utils/utils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="6" selection-start="1194" selection-end="1194" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/scala-library-2.10.0-M3.jar!/scala/collection/TraversableLike.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="27" selection-start="3651" selection-end="3651" vertical-scroll-proportion="0.34254807">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/greeter_module/src/monnef/feezal/module/greeter/GreeterModule.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="28" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/time_module/src/monnef/feezal/module/time/TimeModule.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.39605734">
+        <state line="27" column="41" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.82258064">
           <folding>
             <element signature="e#35#80#0" expanded="true" />
           </folding>

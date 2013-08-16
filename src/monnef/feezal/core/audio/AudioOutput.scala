@@ -1,6 +1,6 @@
 package monnef.feezal.core.audio
 
-import monnef.feezal.core.Utils
+import monnef.feezal.utils._
 
 trait AudioOutput {
   def isSpeaking: Boolean
@@ -12,7 +12,7 @@ trait AudioOutput {
   def addToSpeakQueue(text: String)
 
   def waitUntilSilent() {
-    while (isSpeaking) Utils.sleep(100)
+    while (isSpeaking) sleep(100)
   }
 
   def getLastMessage: String
