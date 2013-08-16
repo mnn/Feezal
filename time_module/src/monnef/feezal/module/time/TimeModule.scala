@@ -19,9 +19,11 @@ class TimeModule extends FeezalModule {
       |<${AudioInput.COMMAND_PLACEHOLDER}> = ${ALL_STUFF.mkString(" | ")};
     """.stripMargin
 
+  def speakTime(d: SimpleDateFormat) = output.addToSpeakQueue(d formatNow)
+
   def processAudioInput(capturedText: String, rawText: String): Boolean =
-    (for {(phrases, dateFormat) <- textToFormat if phrases.contains(capturedText)} yield dateFormat).headOption match {
-      case Some(d: SimpleDateFormat) => {output.addToSpeakQueue(d.formatNow); true}
-      case _ => false
-    }
+    constructMatches(capturedText).headOption.map(speakTime).isDefined
+
+  def constructMatches(capturedText: String): Iterable[SimpleDateFormat] =
+    for {(phrases, dateFormat) <- textToFormat if phrases.contains(capturedText)} yield dateFormat
 }
